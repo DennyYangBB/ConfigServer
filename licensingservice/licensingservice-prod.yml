@@ -9,8 +9,10 @@ spring.datasource.testWhileIdle: true
 spring.datasource.validationQuery: SELECT 1
 spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.MySQLInnoDBDialect
 signing.key: 345345fsdfsf5345
+
 redis.server: 192.168.56.150
 redis.port: 6379
+
 management:
   endpoints.web.base-path: /manage
   context-path: /manage
@@ -19,3 +21,5 @@ management:
 security.user:
   name: admin
   password: secret
+
+

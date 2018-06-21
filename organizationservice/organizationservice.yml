@@ -1,2 +1,30 @@
-example.organization.property: "I AM THE DEFAULT ORGANIZATION SERVICE"
-signing.key: 345345fsdfsf5345
+zuul:
+  ignored-services: "*"
+  prefix:  /api
+  sensitiveHeaders: Cookie,Set-Cookie
+  debug.request: true
+  routes:
+    organizationservice: /organization/**
+    licensingservice: /licensing/**
+    authenticationservice: /auth/**
+#    licensestatic:
+#      path: /licensestatic/**
+#      url:  http://licenseservice-static:8081
+#      serviceId: licensestatic
+#      ribbon.listOfServers: http://licenseservice-static1:8081, http://licenseservice-static2:8082
+
+#ribbon.eureka.enabled: false
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2500
+#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2
+#licensingservice.ribbon.ReadTimeout: 2
+signing.key: "345345fsdfsf5345"
+
+management:
+  endpoints.web.base-path: /manage
+  context-path: /manage
+  security:
+    enabled: true
+security.user:
+  name: admin
+  password: secret
+
